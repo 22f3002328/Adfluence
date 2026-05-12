@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requests</title>
+    <link rel="stylesheet" href="/static/css/campaign_requests.css">
+    <script src="/static/js/campaign_requests.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <div id="header_campaign">
+        <span>Campaign ID</span>
+        <span>Campaign Name</span>
+        <span>Campaign Goal</span>
+        <span>Start Date</span>
+        <span>End Date</span>
+        <span>Visibility</span>
+        <span>Campaign Budget</span>
+    </div>
+    <div id="campaign_details">
+        <span id="campaign_id">{{ campaign.campaign_id }}</span>
+        <span id="campaign_name">{{ campaign.campaign_name }}</span>
+        <span id="campaign_goal">{{ campaign.goal }}</span>
+        <span id="start_date">{{ campaign.start_date }}</span>
+        <span id="end_date"> {{ campaign.end_date }}</span>
+        <span id="visibility">{{ campaign.visibility }}</span>
+        <span id="budget">Rs. {{ campaign.budget }}</span>
+    </div>
+    <button id="add_request" class="btns"></button>
+    <button id="return" class="btns"></button>
+
+    {% if not requests %}
+    <span style="color:red; position: absolute;top: 45%;left: 38%;
+    font-family: cursive;font-size: large;">*----- Advertisement requests not found -----*</span>
+    {% else %}
+    <span style="color:red; position: absolute;top: 28%;left: 36%;
+    font-family: cursive;font-size: large;">*----- Advertisement requests sent/created -----*</span>
+     <div id="header_request">
+         <span>Request ID</span>
+         <span>Influencer ID</span>
+         <span>Influencer Name</span>
+         <span>Requirements</span>
+         <span>Payment Amount</span>
+         <span>Additional Notes</span>
+         <span>Status</span>
+     </div>
+     <div id="request_container">
+         {% for request,influencer in requests %}
+         <div id="{{ request.request_id }}" class="request_details">
+             <span id="request_id">{{ request.request_id }}</span>
+             <span id="influencer_id">{{ request.influencer_id }}</span>
+             {% if not influencer.influencer_name%}
+             <span id="influencer_name">None</span>
+             {% else %}
+             <span id="influencer_name">{{ influencer.influencer_name }}</span>
+             {% endif %}
+             <span id="requirements">{{ request.requirements }}</span>
+             {% if request.payment_amount == 10000 %}
+             <span id="payment_amount">Rs. {{ request.payment_amount }}<pre style="font-family: cursive;font-size: smaller;">* base rate</pre></span>
+             {% else %}
+             <span id="payment_amount">Rs. {{ request.payment_amount }}</span>
+             {% endif %}
+             <span id="additonal_notes">{{ request.additional_notes }}</span>
+             <span id="status">{{ request.status }}</span>
+             <button id="edit" class="btns"></button>
+             <button id="delete" class="btns"></button>
+         </div>
+         {% endfor %}
+     </div>
+    {% endif %}
+</body>
+</html>

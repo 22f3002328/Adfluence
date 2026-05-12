@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negotiation Requests</title>
+    <link rel="stylesheet" href="/static/css/negotiation_requests.css">
+    <script src="/static/js/negotiation_requests.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <button id="return" class="btns"></button>
+    {% if not negotiation_requests %}
+    <span style="color:red; position: absolute;top: 45%;left: 37%;
+    font-family: cursive;font-size: large;">*----- No pending negotiation requests found -----*</span>
+    {% else %} 
+    <span style="color:red; position: absolute;top: 6%;left: 37%;
+    font-family: cursive;font-size: large;">*----- Pending negotiation requests found -----*</span>
+     <div id="header_request">
+         <span>Campaign ID</span>
+         <span>Campaign Name</span>
+         <span>Influencer ID</span>
+         <span>Influencer Name</span>
+         <span>Request ID</span>
+         <span>Requirements</span>
+         <span>Payment Amount</span>
+         <span>Desired Amount</span>
+     </div>
+     <div id="request_container">
+         {% for negotiation_request,campaign,request,influencer in negotiation_requests %}
+         <div id="{{ negotiation_request.negotiation_id }}" class="negotiation_details">
+             <span id="campaign_id">{{ campaign.campaign_id }}</span>
+             <span id="campaign_name">{{ campaign.campaign_name }}</span>
+             <span id="influencer_id">{{ influencer.id }}</span>
+             <span id="influencer_name">{{ influencer.influencer_name }}</span>
+             <span id="request_id">{{ request.request_id }}</span>
+             <span id="requirements">{{ request.requirements }}</span>
+             <span id="payment_amount">Rs. {{ request.payment_amount }}</span>
+             <span id="desired_amount">Rs. {{ negotiation_request.desired_amount }}</span>
+             <button id="accept" class="btns"></button>
+             <button id="reject" class="btns"></button>
+         </div>
+         {% endfor %}
+     </div>
+    {% endif %}
+</body>
+</html>

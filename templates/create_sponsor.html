@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Sponsor</title>
+    <link rel="stylesheet" href="/static/css/create_sponsor.css">
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <form action="/create_sponsor" method="post">
+        <h1>Sign Up</h1><br>
+
+        <label for="name">Sponsor name</label>
+        <input name="name" id="name" type="text" placeholder="Enter name here" maxlength="20" required><br>
+
+        <label for="email">Sponsor email</label>
+        <input name="email" id="email" type="text" placeholder="Enter email address here" maxlength="30" required><br>
+        
+        <label for="username">Sponsor username</label>
+        <input name="username" id="username" type="text" placeholder="Enter username here" maxlength="16" required><br>
+
+        <label for="password">Sponsor password</label>
+        <input name="password" id="password" type="text" placeholder ="Enter password here" minlength="8" maxlength="16" required><br>
+
+        <div style="margin-top: 0.5vw;margin-bottom: 0.5vw;"> 
+            <label for="industry">Sponsor industry</label>
+            <select name="industry" id="industry">
+                <option value="Technology">Technology</option>
+                <option value="Education">Education</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Finance">Finance</option>
+                <option value="Gaming">Gaming</option>
+            </select>
+        </div>
+       
+        <button type="submit">Sign Up</button><br>
+
+        <a href="/login_sponsor" style="color: red;text-decoration: underline;font-size: medium;font-weight: bold;font-family: cursive;position: relative;left: -25%;margin-top: 0.5vw;margin-bottom: 0.5vw;">Go back ?</a>
+    </form>
+</body>
+</html>

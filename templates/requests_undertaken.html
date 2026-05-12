@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requests Undertaken</title>
+    <link rel="stylesheet" href="/static/css/requests_undertaken.css">
+    <script src="/static/js/requests_undertaken.js" defer></script>
+</head>
+<body>
+    <button id="return" class="btns"></button>
+    {% if not accepted_requests %}
+    <span style="color:red; position: absolute;top: 45%;left: 36%;
+    font-family: cursive;font-size: large;">*----- No advertisement requests undertaken -----*</span>
+    {% else %} 
+    <span style="color:red; position: absolute;top: 6%;left: 37%;
+    font-family: cursive;font-size: large;">*----- Advertisement requests undertaken -----*</span>
+     <div id="header_request">
+         <span>Request ID</span>
+         <span>Sponsor Name</span>
+         <span>Campaign Name</span>
+         <span>Campaign Goal</span>
+         <span>Start Date</span>
+         <span>End Date</span>
+         <span>Requirements</span>
+         <span>Payment Amount</span>
+         <span>Additional Notes</span>
+     </div>
+     <div id="request_container">
+         {% for request_details,campaign_details,sponsor_details in accepted_requests %}
+         <div id="{{ request_details.request_id }}" class="request_details">
+             <span id="request_id">{{ request_details.request_id }}</span>
+             <span id="sponsor_name">{{ sponsor_details.sponsor_name }}</span>
+             <span id="campaign_name">{{ campaign_details.campaign_name }}</span>
+             <span id="campaign_goal">{{ campaign_details.goal }}</span>
+             <span id="start_date">{{ campaign_details.start_date }}</span>
+             <span id="end_date">{{ campaign_details.end_date }}</span>
+             <span id="requirements">{{ request_details.requirements }}</span>
+             <span id="payment_amount">Rs. {{ request_details.payment_amount }}</span>
+             <span id="additonal_notes">{{ request_details.additional_notes }}</span>
+         </div>
+         {% endfor %}
+     </div>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard_influencer.css">
+    <script src="/static/js/dashboard_influencer.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <header>
+        <h1> Welcome, <span>{{ user.username }}</span> !</h1>
+        <button type="submit" id="negotiations_sent"></button>
+        <button type="submit" id="accepted_requests"></button>
+        <button type="submit" id="pvt_requests"></button>
+        <button type="submit" id="profile"></button>
+    </header>
+    <div id="filter">
+        <div id="div_1" style="margin-left: 2vw;margin-right: 2vw;">
+            <label for="campaign_field">Filter by campaign field</label>
+            <select name="campaign_field" id="campaign_field">
+                <option value="" selected disabled>Select a field</option>
+                <option value="Technology">Technology</option>
+                <option value="Education">Education</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Finance">Finance</option>
+                <option value="Gaming">Gaming</option>
+            </select>
+        </div>
+        <button type="submit" id="submit" class="btns"></button>
+    </div>
+    {% if not public_campaigns %}
+    {% if not campaign_field %}
+    <span style="color:red; position: absolute;top: 50%;left:38.5%;
+    font-family: cursive;font-size: large;">*----- No public campaigns to display -----*</span>
+    {% else %}
+    <span style="color:red; position: absolute;top: 50%;left:35%;
+    font-family: cursive;font-size: large;">*----- No public campaigns for {{ campaign_field }} to display -----*</span>
+    {% endif %}
+    {% else %}
+    <span style="color:red; position: absolute;top: 40%;left: 37%;
+    font-family: cursive;font-size: large;">*----- Public campaigns for {{ campaign_field }} found -----*</span>
+     <div id="header_campaigns">
+        <span>Sponsor ID</span>
+        <span>Campaign ID</span>
+        <span>Campaign Name</span>
+        <span>Campaign Goal</span>
+        <span>Start Date</span>
+        <span>End Date</span>
+     </div>
+     <div id="campaign_container">
+         {% for public_campaign in public_campaigns %}
+         <div id="{{ public_campaign.campaign_id }}" class="campaign_details">
+            <span id="sponsor_id">{{ public_campaign.sponsor_id }}</span>
+            <span id="campaign_id">{{ public_campaign.campaign_id }}</span>
+             <span id="campaign_name">{{ public_campaign.campaign_name }}</span>
+             <span id="campaign_goal">{{ public_campaign.goal }}</span>
+             <span id="start_date">{{ public_campaign.start_date }}</span>
+             <span id="end_date">{{ public_campaign.end_date }}</span>
+             <button type="submit" id="redirect"></button>
+         </div>
+         {% endfor %}
+     </div>
+     {% endif %}
+
+   
+</body>
+</html>

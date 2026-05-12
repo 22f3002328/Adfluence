@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Request</title>
+    <link rel="stylesheet" href="/static/css/add_pvt_request.css">
+    <script src="/static/js/add_pvt_request.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <div id="user_input">
+        <h1>Add Private Request</h1><br>
+
+        <label for="influencer_id" >Influencer ID</label>
+        <input name="influencer_id" id="influencer_id" class="btns_disabled" type="text" placeholder="{{ influencer_id }}" disabled><br>
+
+        <label for="campaign_id">Campaign ID</label>
+        <input name="campaign_id" id="campaign_id" class="btns_disabled" type="text" placeholder="{{ campaign_id }}" disabled><br>
+
+        <label for="requirements">Requirements</label>
+        <input name="requirements" id="requirements" type="text" placeholder="Enter requirements here" maxlength="45" required><br>
+
+        <label for="payment_amount">Payment amount</label>
+        <input name="payment_amount" id="payment_amount" type="number" placeholder="Enter payment amount here" min="10000" required><br>
+        
+        <label for="additional_notes">Additional Notes</label>
+        <input name="additional_notes" id="additional_notes" type="text" placeholder="Enter additional notes here" maxlength="45" required><br>
+
+        <button id="submit" type="submit">Add Request</button><br>
+
+        <a id="return" style="color: red;text-decoration: underline;font-size: medium;font-weight: bold;font-family: cursive;position: relative;left: -25%;margin-top: 0.5vw;margin-bottom: 0.5vw;">Go back ?</a>
+    </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer Search</title>
+    <link rel="stylesheet" href="/static/css/influencer_search.css">
+    <script src="/static/js/influencer_search.js" defer></script>
+</head>
+<body>
+    <div id="campaign_id" style="visibility: hidden;">#{{ campaign_id }}</div>
+    <div id="user_input">
+        <div id="div_1" style="margin-left: 2vw;margin-right: 2vw;">
+            <label for="niche">Filter by influencer niche</label>
+            <select name="niche" id="niche">
+                <option value="" selected disabled>Select a niche</option>
+                <option value="Technology">Technology</option>
+                <option value="Education">Education</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Finance">Finance</option>
+                <option value="Gaming">Gaming</option>
+            </select>
+        </div>
+        <div id="div_2" style="margin-left: 2vw;margin-right: 2vw;">
+            <label for="followers">Filter by influencer reach</label>
+            <select name="followers" id="followers">
+                <option value="" selected disabled>Select influencer reach</option>
+                <option value="&lt;= 50K">&lt;= 50K</option>
+                <option value="&gt; 50K &lt;= 100K">&gt; 50K &lt;= 100K</option>
+                <option value="&gt; 100K">&gt; 100K</option>
+            </select>
+        </div>
+        <button type="submit" id="submit" class="btns"></button>
+    </div>
+    <button type="submit" id="return" class="btns"></button>
+    {% if influencers %}
+    <span style="color:red; position: absolute;top: 20%;left: 42%;
+    font-family: cursive;font-size: large;">*----- Influencers found -----*</span>
+    <div id="header">
+        <span>Influencer ID</span>
+        <span>Influencer Name</span>
+        <span>Influencer Niche</span>
+        <span>Influencer Reach</span>
+    </div>
+    <div id="influencer_container">
+        {% for influencer in influencers %}
+        <div id="{{ influencer.id}}" class="influencer_details">
+            <span>{{ influencer.id }}</span>
+            <span>{{ influencer.influencer_name }}</span>
+            <span>{{ influencer.niche }}</span>
+            <span>{{ influencer.followers }}</span>
+            <button id="redirect" class="btns"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <span style="color: red;position: absolute;top: 45%;left: 40%;font-family: cursive;
+    font-size: large;">*----- No influencers to display -----*</span>
+    {% endif %}
+</body>
+</html>

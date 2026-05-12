@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <script src="/static/js/home.js" defer></script>
+</head>
+<body>
+    <h1 id="header">What category of user are you ?</h1>
+    <div id="nav">
+        <div id="nav_admin">
+            <img src="/static/images/admin.png" alt="admin" style="width: 10vw;">
+            <span style="font-family: cursive;font-size: medium;font-weight: bold;">Admin</span>
+        </div>
+        
+        <div id="nav_influencer">
+            <img src="/static/images/influencer.png" alt="influencer" style="width: 10vw;">
+            <span style="font-family: cursive;font-size: medium;font-weight: bold;">Influencer</span>
+        </div>
+        
+        <div id="nav_sponsor">
+            <img src="/static/images/sponsor.png" alt="sponsor" style="width: 10vw;">
+            <span style="font-family: cursive;font-size: medium;font-weight: bold;">Sponsor</span>
+        </div>
+    </div>
+    {% if not(message is none) %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+</body>
+</html>

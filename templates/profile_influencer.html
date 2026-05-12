@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer Profile</title>
+    <link rel="stylesheet" href="/static/css/profile_influencer.css">
+    <script src="/static/js/profile_influencer.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <button id="logout" class="btn"></button>
+    <form action="/profile_influencer" method="post" enctype="multipart/form-data">
+        <h1>Edit profile</h1>
+
+        {% if image_encoding %}
+        <img src="data:image/jpeg;base64,{{ image_encoding }}" alt="profile_img" style="width: 6.5vw;height: 6.5vw;border-radius: 50%;">
+        <input type="file" accept="image/*" name="image" id="image" style="border: none;position: relative;left: 15%;margin-top: 0.75vw;
+        margin-bottom: 0.75vw;">
+        {% else %}
+        <img src="/static/images/profile_pic.png" alt="influencer_profile_pic" style="width: 5vw;">
+        <input type="file" id="image" name="image" accept="image/*" style="border: none;position: relative;left: 15%;margin-top: 0.75vw;
+        margin-bottom: 0.75vw;">
+        {% endif %}
+
+        <label for="name">Influencer name</label>
+        <input name="name" id="name" type="text" placeholder="{{ user.influencer_name }}" maxlength="20" value="{{ user.influencer_name }}"><br>
+
+        <label for="email">Influencer email</label>
+        <input name="email" id="email" type="text" placeholder="{{ user.email }}" maxlength="30" value="{{ user.email }}"><br>
+        
+        <label for="username">Influencer username</label>
+        <input name="username" id="username" type="text" placeholder="{{ user.username }}" maxlength="16" value="{{ user.username }}"><br>
+
+        <div style="margin-top: 0.5vw;margin-bottom: 0.5vw;"> 
+            <label for="niche">Influencer niche</label>
+            <select name="niche" id="niche" disabled>
+                <option value="{{ user.niche }}">{{ user.niche }}</option>
+            </select>
+        </div>
+
+        <div style="margin-top: 0.5vw;margin-bottom: 0.5vw;">
+            <label for="follower_count">Influencer reach</label>
+            <select name="follower_count" id="follower_count">
+                <option value="{{ user.followers }}" selected style="background-color: silver;color: white;">{{ user.followers }}</option>
+                <option value="&lt;= 50K">&lt;= 50K</option>
+                <option value="&gt; 50K &lt;= 100K">&gt; 50K &lt;= 100K</option>
+                <option value="&gt; 100K">&gt; 100K</option>
+            </select>
+        </div>
+       
+        <button id="button" type="submit">Save changes</button><br>
+
+        <a id="return" style="color: red;text-decoration: underline;font-size: medium;font-weight: bold;font-family: cursive;position: relative;left: -25%;bottom: 1%;margin-top: 0.5vw;margin-bottom: 0.5vw;">Go back ?</a>
+    </form>
+    
+</body>
+</html>

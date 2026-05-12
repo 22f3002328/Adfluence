@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Campaign</title>
+    <link rel="stylesheet" href="/static/css/add_campaign.css">
+    <script src="/static/js/add_campaign.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <form action="/add_campaign" method="post">
+        <h1>Add Campaign</h1><br>
+
+        <label for="campaign_name">Campaign name</label>
+        <input name="campaign_name" id="campaign_name" type="text" placeholder="Enter campaign name here" maxlength="30" required><br>
+
+        <label for="campaign_goal">Campaign goal</label>
+        <input name="campaign_goal" id="campaign_goal" type="text" placeholder="Enter campaign goal here" maxlength="45" required><br>
+        
+        <div style="display: flex;flex-direction: row;justify-content: center;align-items: center;
+        width: 30vw;">
+            <div id="div_1" style="display: flex;flex-direction: column;justify-content: center;align-items: center;width: 10vw;margin-left: 1vw;margin-right: 1vw;">
+                <label for="start_date">Start date</label>
+                <input name="start_date" id="start_date" type="date" required>
+            </div>
+
+            <div id="div_2" style="display: flex;flex-direction: column;justify-content: center;align-items: center;width: 10vw;margin-left: 1vw;margin-right: 1vw;">
+                <label for="end_date">End date</label>
+                <input name="end_date" id="end_date" type="date" required>
+            </div>
+        </div><br>
+
+        <div id="div_3">
+            <label for="visibility">Campaign Visibility</label>
+            <select name="visibility" id="visibility" required>
+                <option value="Public">Public</option>
+                <option value="Private">Private</option>
+            </select>
+        </div><br>
+        
+        <label for="budget">Campaign Budget</label>
+        <input name="budget" id="budget" type="number" placeholder="Enter budget here" min="1" max="5000000" required><br>
+        
+        <button type="submit">Add Campaign</button><br>
+
+        <a id="return" style="color: red;text-decoration: underline;font-size: medium;font-weight: bold;font-family: cursive;position: relative;left: -25%;margin-top: 0.5vw;margin-bottom: 0.5vw;">Go back ?</a>
+    </form>
+</body>
+</html>

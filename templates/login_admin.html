@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="/static/css/login_admin.css">
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <form action="/login_admin" method="post">
+        <h1>Login</h1><br>
+        
+        <label for="username">Admin username</label>
+        <input name="username" id="username" type="text" placeholder="Enter username here" required><br>
+
+        <label for="password">Admin password</label>
+        <input name="password" id="password" type="text" placeholder ="Enter password here" required><br>
+
+        <button type="submit">Sign In</button><br>
+
+        
+        <a href="/" style="color: red;text-decoration: underline;font-size: medium;font-weight: bold;font-family: cursive;position: relative;
+        left: -25%;margin-top: 0.5vw;margin-bottom: 0.5vw;">Go back ?</a>
+    </form>
+</body>
+</html>

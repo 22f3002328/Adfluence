@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negotiation Requests</title>
+    <link rel="stylesheet" href="/static/css/negotiations_sent.css">
+    <script src="/static/js/negotiations_sent.js" defer></script>
+</head>
+<body>
+    <button id="return" class="btns"></button>
+    {% if not negotiation_requests %}
+    <span style="color:red; position: absolute;top: 45%;left: 40%;
+    font-family: cursive;font-size: large;">*----- No negotiation requests found -----*</span>
+    {% else %} 
+    <span style="color:red; position: absolute;top: 6%;left: 40%;
+    font-family: cursive;font-size: large;">*----- Negotiation requests found -----*</span>
+     <div id="header_request">
+         <span>Negotiation ID</span>
+         <span>Campaign ID</span>
+         <span>Campaign Name</span>
+         <span>Request ID</span>
+         <span>Requirements</span>
+         <span>Desired Amount</span>
+         <span>Status</span>
+     </div>
+     <div id="negotiation_request_container">
+         {% for negotiation_request,ad_request,campaign_details in negotiation_requests %}
+         <div id="{{ negotiation_request.negotiation_id }}" class="negotiation_details">
+             <span id="negotiation_id">{{ negotiation_request.negotiation_id }}</span>
+             <span id="campaign_id">{{ negotiation_request.campaign_id }}</span>
+             <span id="campaign_name">{{ campaign_details.campaign_name }}</span>
+             <span id="request_id">{{ negotiation_request.request_id }}</span>
+             <span id="requirements">{{ ad_request.requirements }}</span>
+             <span id="desired_amount">Rs. {{ negotiation_request.desired_amount }}</span>
+             <span id="status">{{ negotiation_request.status }}</span>
+         </div>
+         {% endfor %}
+     </div>
+    {% endif %}
+</body>
+</html>

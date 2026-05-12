@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Negotiation Request</title>
+    <link rel="stylesheet" href="/static/css/add_negotiation_request.css">
+    <script src="/static/js/add_negotiation_request.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <div id="user_input">
+        <h1>Create Negotiation Request</h1><br>
+
+        <label for="campaign_id">Campaign ID</label>
+        <input name="campaign_id" id="campaign_id" class="btns_disabled" type="text" placeholder="{{ campaign_id }}" disabled><br>
+
+        <label for="request_id">Request ID</label>
+        <input name="request_id" id="request_id" class="btns_disabled" type="text" placeholder="{{ request_id }}" disabled><br>
+
+        <label for="sponsor_id">Sponsor ID</label>
+        <input name="sponsor_id" id="sponsor_id" class="btns_disabled" type="text" placeholder="{{ sponsor_id }}" disabled><br>
+        
+        <label for="desired_amount">Desired Amount</label>
+        <input name="desired_amount" id="desired_amount" type="number" placeholder="Enter desired amount here" min="1" required><br>
+
+        <button id="submit" type="submit">Send Request</button><br>
+
+        <a id="return" style="color: red;text-decoration: underline;font-size: medium;font-weight: bold;font-family: cursive;position: relative;left: -25%;margin-top: 0.5vw;margin-bottom: 0.5vw;">Go back ?</a>
+    </form>
+</body>
+</html>

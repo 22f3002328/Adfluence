@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Requests</title>
+    <link rel="stylesheet" href="/static/css/public_requests.css">
+    <script src="/static/js/public_requests.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <div id="header_campaign">
+        <span>Campaign ID</span>
+        <span>Campaign Name</span>
+        <span>Campaign Goal</span>
+        <span>Start Date</span>
+        <span>End Date</span>
+        <span>Visibility</span>
+    </div>
+    <div id="campaign_details">
+        <span id="campaign_id">{{ campaign.campaign_id }}</span>
+        <span id="campaign_name">{{ campaign.campaign_name }}</span>
+        <span id="campaign_goal">{{ campaign.goal }}</span>
+        <span id="start_date">{{ campaign.start_date }}</span>
+        <span id="end_date"> {{ campaign.end_date }}</span>
+        <span id="visibility">{{ campaign.visibility }}</span>
+    </div>
+    <button id="return" class="btns"></button>
+
+    {% if not requests %}
+    <span style="color:red; position: absolute;top: 45%;left: 34%;
+    font-family: cursive;font-size: large;">*----- No public advertisement requests available -----*</span>
+    {% else %}
+    <span style="color:red; position: absolute;top: 28%;left: 37%;
+    font-family: cursive;font-size: large;">*----- Public advertisement requests found -----*</span>
+     <div id="header_request">
+         <span>Request ID</span>
+         <span>Sponsor ID</span>
+         <span>Sponsor Name</span>
+         <span>Requirements</span>
+         <span>Payment Amount</span>
+         <span>Additional Notes</span>
+         <span>Status</span>
+     </div>
+     <div id="request_container">
+         {% for request,sponsor in requests %}
+         <div id="{{ request.request_id }}" class="request_details">
+             <span id="request_id">{{ request.request_id }}</span>
+             <span id="sponsor_id">{{ request.sponsor_id }}</span>
+             <span id="sponsor_name">{{ sponsor.sponsor_name }}</span>
+             <span id="requirements">{{ request.requirements }}</span>
+             {% if request.payment_amount == 10000 %}
+             <span id="payment_amount">Rs. {{ request.payment_amount }}<pre style="font-family: cursive;font-size: smaller;">* base rate</pre></span>
+             {% else %}
+             <span id="payment_amount">Rs. {{ request.payment_amount }}</span>
+             {% endif %}
+             <span id="additonal_notes">{{ request.additional_notes }}</span>
+             <span id="status">{{ request.status }}</span>
+             <button id="accept" class="btns"></button>
+             <button id="reject" class="btns"></button>
+             <button id="negotiate" class="btns"></button>
+         </div>
+         {% endfor %}
+     </div>
+    {% endif %}
+    
+</body>
+</html>

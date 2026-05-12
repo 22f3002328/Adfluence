@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="/static/css/statistics.css">
+    <script src="/static/js/statistics.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="height: 315vh;">
+    <button id="return"></button>
+    <span style="color: red;font-family: cursive;font-size: large;position: absolute;top: 5.5%;left: 39.5%;">*----- Statistics represented below -----*</span>
+    <div id="charts_container">
+        <canvas id="inf_distr_niche"></canvas>
+        <canvas id="flagged_infs_distr"></canvas>
+        
+        <canvas id="spn_distr_industry"></canvas>
+        <canvas id="flagged_spns_distr"></canvas>
+        
+        <canvas id="req_distr_field"></canvas>
+        <canvas id="flagged_reqs_distr"></canvas>
+        
+        <canvas id="camp_distr_field"></canvas>
+        <canvas id="flagged_camps_distr"></canvas>
+    </div>    
+</body>
+</html>

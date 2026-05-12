@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Campaign</title>
+    <link rel="stylesheet" href="/static/css/edit_campaign.css">
+    <script src="/static/js/edit_campaign.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <span id="campaign_id" style="visibility: hidden;background-color: bisque;font-family: cursive;font-size: 0.75vw;color: ghostwhite;text-shadow: 0.2vw 0.2vw 0.5vw grey;position: absolute;top: 0.5%;left: 0.5%;border-radius: 1vw;">#{{ campaign.campaign_id}}</span>
+    <div id="form">
+        <h1>Edit Campaign</h1><br>
+
+        <label for="campaign_name">Campaign name</label>
+        <input name="campaign_name" id="campaign_name" type="text" placeholder="{{ campaign.campaign_name }}" maxlength="30" disabled><br>
+
+        <label for="campaign_goal">Campaign goal</label>
+        <input name="campaign_goal" id="campaign_goal" type="text" placeholder="{{ campaign.goal }}" maxlength="45" disabled><br>
+        
+        <div style="display: flex;flex-direction: row;justify-content: center;align-items: center;
+        width: 30vw;">
+            <div id="div_1" style="display: flex;flex-direction: column;justify-content: center;align-items: center;width: 10vw;margin-left: 1vw;margin-right: 1vw;">
+                <label for="start_date">Start date</label>
+                <input name="start_date" id="start_date" type="date" required>
+            </div>
+
+            <div id="div_2" style="display: flex;flex-direction: column;justify-content: center;align-items: center;width: 10vw;margin-left: 1vw;margin-right: 1vw;">
+                <label for="end_date">End date</label>
+                <input name="end_date" id="end_date" type="date" required>
+            </div>
+        </div><br>
+
+        <div id="div_3">
+            <label for="visibility">Campaign Visibility</label>
+            <select name="visibility" id="visibility" disabled>
+                <option value="{{ campaign.visibility }}">{{ campaign.visibility }}</option>
+            </select>
+        </div><br>
+        
+        <label for="budget">Campaign Budget</label>
+        <input name="budget" id="budget" type="number" placeholder="{{ campaign.budget }}" min="1" max="5000000" required><br>
+        
+        <button id="submit" type="submit">Save Changes</button><br>
+
+        <a id="return" style="color: red;text-decoration: underline;font-size: medium;font-weight: bold;font-family: cursive;position: relative;left: -25%;margin-top: 0.5vw;margin-bottom: 0.5vw;">Go back ?</a>
+    </div>
+    
+</body>
+</html>

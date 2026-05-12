@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Request</title>
+    <link rel="stylesheet" href="/static/css/edit_request.css">
+    <script src="/static/js/edit_request.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <span id="request_id" style="visibility: hidden;background-color: bisque;font-family: cursive;font-size: 0.75vw;color: ghostwhite;text-shadow: 0.2vw 0.2vw 0.5vw grey;position: absolute;top: 0.5%;left: 0.5%;border-radius: 1vw;">#{{ current_request.request_id}}</span>
+    <div id="user_input">
+        <h1>Edit Request</h1><br>
+
+        <label for="influencer_id" >Influencer ID</label>
+        <input name="influencer_id" id="influencer_id" class="btns_disabled" type="text" placeholder="{{ current_request.influencer_id }}" disabled><br>
+
+        <label for="campaign_id">Campaign ID</label>
+        <input name="campaign_id" id="campaign_id" class="btns_disabled" type="text" placeholder="{{ current_request.campaign_id }}" disabled><br>
+
+        <label for="requirements">Requirements</label>
+        <input name="requirements" id="requirements" type="text" placeholder="{{ current_request.requirements }}" maxlength="45" required><br>
+
+        <label for="payment_amount">Payment amount</label>
+        <input name="payment_amount" id="payment_amount" type="number" placeholder="{{ current_request.payment_amount }}" min="1" required><br>
+        
+        <label for="additional_notes">Additional Notes</label>
+        <input name="additional_notes" id="additional_notes" type="text" placeholder="{{ current_request.additional_notes }}" maxlength="45" required><br>
+
+        <button id="submit" type="submit">Save Changes</button><br>
+
+        <a id="return" style="color: red;text-decoration: underline;font-size: medium;font-weight: bold;font-family: cursive;position: relative;left: -25%;margin-top: 0.5vw;margin-bottom: 0.5vw;">Go back ?</a>
+    </form>
+   
+</body>
+</html>

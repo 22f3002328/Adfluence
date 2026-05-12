@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsor Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard_sponsor.css">
+    <script src="/static/js/dashboard_sponsor.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <header>
+        <h1> Welcome, <span>{{ user.username }}</span> !</h1>
+        <button type="submit" id="negotiation_requests"></button>
+        <button type="submit" id="add_campaign"></button>
+        <button type="submit" id="profile"></button>
+    </header>
+
+    {% if not campaigns %}
+    <span style="color:red; position: absolute;top: 45%;left: 42%;
+    font-family: cursive;font-size: large;">*----- No campaigns found -----*</span>
+    {% else %}
+    <span style="color:red; position: absolute;top: 21%;left: 43%;
+    font-family: cursive;font-size: large;">*----- Campaigns created -----*</span>
+    <div id="header">
+        <span>Campaign Name</span>
+        <span>Campaign Goal</span>
+        <span>Start Date</span>
+        <span>End Date</span>
+        <span>Visibility</span>
+        <span>Campaign Budget</span>
+    </div>
+    <div id="campaign_container">
+        {% for campaign in campaigns %}
+        <div id="{{ campaign.campaign_id }}" class="campaign_details">
+            <span id="campaign_name">{{ campaign.campaign_name }}</span>
+            <span id="campaign_goal">{{ campaign.goal }}</span>
+            <span id="start_date">{{ campaign.start_date }}</span>
+            <span id="end_date">{{ campaign.end_date }}</span>
+            <span id="visibility">{{ campaign.visibility }}</span>
+            <span id="budget">Rs. {{ campaign.budget }}</span>
+            <button id="redirect" class="btns"></button>
+            <button id="delete" class="btns" ></button>
+            <button id="edit" class="btns"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+   
+</body>
+</html>

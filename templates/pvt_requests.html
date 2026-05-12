@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Requests</title>
+    <link rel="stylesheet" href="/static/css/pvt_requests.css">
+    <script src="/static/js/pvt_requests.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <button id="return" class="btns"></button>
+    {% if not requests %}
+    <span style="color:red; position: absolute;top: 45%;left: 36%;
+    font-family: cursive;font-size: large;">*----- No private advertisement requests found -----*</span>
+    {% else %} 
+    <span style="color:red; position: absolute;top: 6%;left: 37%;
+    font-family: cursive;font-size: large;">*----- Private advertisement requests found -----*</span>
+     <div id="header_request">
+         <span>Sponsor ID</span>
+         <span>Sponsor Name</span>
+         <span>Campaign Name</span>
+         <span>Campaign Goal</span>
+         <span>Start Date</span>
+         <span>End Date</span>
+         <span>Requirements</span>
+         <span>Payment Amount</span>
+         <span>Additional Notes</span>
+         <span>Status</span>
+     </div>
+     <div id="request_container">
+         {% for request_details,campaign_details,sponsor_details in requests %}
+         <div id="{{ request_details.request_id }}" class="request_details">
+             <span id="sponsor_id">{{ sponsor_details.id }}</span>
+             <span id="sponsor_name">{{ sponsor_details.sponsor_name }}</span>
+             <span id="campaign_id">{{ campaign_details.campaign_id }}</span>
+             <span id="campaign_goal">{{ campaign_details.goal }}</span>
+             <span id="start_date">{{ campaign_details.start_date }}</span>
+             <span id="end_date">{{ campaign_details.end_date }}</span>
+             <span id="requirements">{{ request_details.requirements }}</span>
+             {% if request_details.payment_amount == 10000 %}
+             <span id="payment_amount">Rs. {{ request_details.payment_amount }}<pre style="font-family: cursive;font-size: smaller;">* base rate</pre></span>
+             {% else %}
+             <span id="payment_amount">Rs. {{ request_details.payment_amount }}</span>
+             {% endif %}
+             <span id="additonal_notes">{{ request_details.additional_notes }}</span>
+             <span id="status">{{ request_details.status }}</span>
+             <button id="accept" class="btns"></button>
+             <button id="reject" class="btns"></button>
+             <button id="negotiate" class="btns"></button>
+         </div>
+         {% endfor %}
+     </div>
+    {% endif %}
+</body>
+</html>

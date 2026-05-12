@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard_admin.css">
+    <script src="/static/js/dashboard_admin.js" defer></script>
+</head>
+<body style="height: 335vh;">
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <header>
+        <h1> Welcome, <span>{{ user.username }}</span> !</h1>
+        <button type="submit" id="stats"></button>
+        <button type="submit" id="logout"></button>
+    </header>
+    {% if not sponsors %}
+    <div class="parent_container_sponsors">
+        <span style="color:red; position: absolute;top: 45%;left: 35%;font-family: cursive;font-size: large;">*----- No sponsor accounts to be displayed -----*</span>
+    </div>
+    {% else %}
+    <div class="parent_container_sponsors">
+        <span style="color:red; position: absolute;top: 5.5%;left: 39%;font-family: cursive;font-size: large;">*----- Sponsor accounts found -----*</span>
+        <div id="header_sponsor">
+            <span>Profile Picture</span>
+            <span>Sponsor ID</span>
+            <span>Sponsor Name</span>
+            <span>Industry</span>
+            <span>Username</span>
+            <span>Email</span>
+            <span>Flag Status</span>
+        </div>
+        <div id="sponsor_container">
+            {% for sponsor,profile_pic in sponsors %}
+            <div id="{{ sponsor.id }}" class="sponsor_details">
+                {% if profile_pic.image_encoding %}
+                <span id="profile_pic"><img src="data:images/jpeg;base64,{{ profile_pic.image_encoding }}" style="width: 3vw;height: 3vw;
+                border-radius: 50%;" alt="profile_pic"></span>
+                {% else %}
+                <span id="profile_pic"><img src="/static/images/profile_pic.png" style="width: 3vw;height: 3vw;
+                border-radius: 50%;" alt="profile_pic"></span>
+                {% endif %}
+                <span id="sponsor_id">{{ sponsor.id}}</span>
+                <span id="sponsor_name">{{ sponsor.sponsor_name }}</span>
+                <span id="industry">{{ sponsor.industry }}</span>
+                <span id="username">{{ sponsor.username }}</span>
+                <span id="email">{{ sponsor.email }}</span>
+                <span id="flag_status">{{ sponsor.flagged }}</span>
+                <button id="flag" class="btns"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    {% if not influencers %}
+    <div class="parent_container_influencers">
+        <span style="color:red; position: absolute;top: 45%;left: 35%;font-family: cursive;font-size: large;">*----- No influencer accounts to be displayed -----*</span>
+    </div>
+    {% else %}
+    <div class="parent_container_influencers">
+        <span style="color:red; position: absolute;top: 5.5%;left: 39%;font-family: cursive;font-size: large;">*----- Influencer accounts found -----*</span>
+        <div id="header_influencer">
+            <span>Profile Picture</span>
+            <span>Influencer ID</span>
+            <span>Influencer Name</span>
+            <span>Niche</span>
+            <span>Followers</span>
+            <span>Username</span>
+            <span>Email</span>
+            <span>Flag Status</span>
+        </div>
+        <div id="influencer_container">
+            {% for influencer,profile_pic in influencers %}
+            <div id="{{ influencer.id }}" class="influencer_details">
+                {% if profile_pic.image_encoding %}
+                <span id="profile_pic"><img src="data:images/jpeg;base64,{{ profile_pic.image_encoding }}" style="width: 3vw;height: 3vw;
+                border-radius: 50%;" alt="profile_pic"></span>
+                {% else %}
+                <span id="profile_pic"><img src="/static/images/profile_pic.png" style="width: 3vw;height: 3vw;
+                border-radius: 50%;" alt="profile_pic"></span>
+                {% endif %}
+                <span id="influencer_id">{{ influencer.id}}</span>
+                <span id="influencer_name">{{ influencer.influencer_name }}</span>
+                <span id="niche">{{ influencer.niche }}</span>
+                <span id="reach">{{ influencer.followers }}</span>
+                <span id="username">{{ influencer.username }}</span>
+                <span id="email">{{ influencer.email }}</span>
+                <span id="flag_status">{{ influencer.flagged }}</span>
+                <button id="flag" class="btns"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    {% if not campaigns %}
+    <div class="parent_container_campaigns">
+        <span style="color:red; position: absolute;top: 45%;left: 34%;font-family: cursive;font-size: large;">*----- No public/private campaigns to be displayed -----*</span>
+    </div>
+    {% else %}
+    <div class="parent_container_campaigns">
+        <span style="color:red; position: absolute;top: 7%;left: 39%;font-family: cursive;font-size: large;">*----- Public/private campaigns found -----*</span>
+        <div id="header_campaign">
+            <span>Campaign ID</span>
+            <span>Campaign Name</span>
+            <span>Campaign Goal</span>
+            <span>Start Date</span>
+            <span>End Date</span>
+            <span>Status</span>
+            <span>Visibility</span>
+            <span>Campaign Budget</span>
+            <span>Flag Status</span>
+        </div>
+        <div id="campaign_container">
+            {% for campaign in campaigns %}
+            <div id="{{ campaign.campaign_id }}" class="campaign_details">
+                <span id="campaign_id">{{ campaign.campaign_id}}</span>
+                <span id="campaign_name">{{ campaign.campaign_name }}</span>
+                <span id="campaign_goal">{{ campaign.goal }}</span>
+                <span id="start_date">{{ campaign.start_date }}</span>
+                <span id="end_date">{{ campaign.end_date }}</span>
+                <span id="status">{{ campaign.status }}</span>
+                <span id="visibility">{{ campaign.visibility }}</span>
+                <span id="budget">Rs. {{ campaign.budget }}</span>
+                <span id="flag_status">{{ campaign.flagged }}</span>
+                <button id="flag" class="btns"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    {% if not requests %}
+    <div class="parent_container_requests">
+        <span style="color:red; position: absolute;top: 45%;left: 34%;font-family: cursive;font-size: large;">*----- No public/private requests to be displayed -----*</span>
+    </div>
+    {% else %}
+    <div class="parent_container_requests">
+        <span style="color:red; position: absolute;top: 7%;left: 39%;font-family: cursive;font-size: large;">*----- Public/private requests found -----*</span>
+        <div id="header_request">
+            <span>Request ID</span>
+            <span>Influencer Name</span>
+            <span>Campaign Name</span>
+            <span>Sponsor Name</span>
+            <span>Additional Notes</span>
+            <span>Requirements</span>
+            <span>Payment Amount</span>
+            <span>Status</span>
+            <span>Flag Status</span>
+        </div>
+        <div id="request_container">
+            {% for request,influencer,campaign,sponsor in requests %}
+            <div id="{{ request.request_id }}" class="request_details">
+                <span id="request_id">{{ request.request_id }}</span>
+                {% if not influencer.influencer_name %}
+                <span id="influencer_name">None</span>
+                {% else %}
+                <span id="influencer_name">{{ influencer.influencer_name }}</span>
+                {% endif %}
+                <span id="campaign_name">{{ campaign.campaign_name }}</span>
+                <span id="sponsor_name">{{ sponsor.sponsor_name }}</span>
+                <span id="additional_notes">{{ request.additional_notes }}</span>
+                <span id="requirements">{{ request.requirements }}</span>
+                {% if request.payment_amount == 10000 %}
+                <span id="payment_amount">Rs. {{ request.payment_amount }}<pre style="font-family: cursive;font-size: smaller;">* base rate</pre></span>
+                {% else %}
+                <span id="payment_amount">Rs. {{ request.payment_amount }}</span>
+                {% endif %}
+                <span id="status">{{ request.status }}</span>
+                <span id="flag_status">{{ request.flagged }}</span>
+                <button id="flag" class="btns"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    {% if not negotiation_requests %}
+    <div class="parent_container_negotiations">
+        <span style="color:red; position: absolute;top: 45%;left: 35.5%;font-family: cursive;font-size: large;">*----- No negotiation requests to be displayed -----*</span>
+    </div>
+    {% else %}
+    <div class="parent_container_negotiations">
+        <span style="color:red; position: absolute;top: 7%;left: 39%;font-family: cursive;font-size: large;">*----- Negotiation requests found -----*</span>
+        <div id="header_negotiations">
+            <span>Negotiation ID</span>
+            <span>Request ID</span>
+            <span>Influencer Name</span>
+            <span>Sponsor Name</span>
+            <span>Desired Amount</span>
+            <span>Status</span>
+            <span>Flag Status</span>
+        </div>
+        <div id="negotiations_container">
+            {% for negotiation_request,influencer,sponsor in negotiation_requests %}
+            <div id="{{ negotiation_request.negotiation_id }}" class="negotiation_details">
+                <span id="negotiation_id">{{ negotiation_request.negotiation_id }}</span>
+                <span id="request_id">{{ negotiation_request.request_id }}</span>
+                <span id="influencer_name">{{ influencer.influencer_name }}</span>
+                <span id="sponsor_name">{{ sponsor.sponsor_name }}</span>
+                <span id="desired_amount">Rs. {{ negotiation_request.desired_amount }}</span>
+                <span id="status">{{ negotiation_request.status }}</span>
+                <span id="flag_status">{{ negotiation_request.flagged }}</span>
+                <button id="flag" class="btns"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>

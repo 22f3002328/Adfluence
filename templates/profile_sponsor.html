@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: bisque;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsor Profile</title>
+    <link rel="stylesheet" href="/static/css/profile_sponsor.css">
+    <script src="/static/js/profile_sponsor.js" defer></script>
+</head>
+<body>
+    {% if message != '' %}
+    <script> alert('{{ message|capitalize }}')</script>
+    {% endif %}
+    <button id="logout" class="btn"></button>
+    <form action="/profile_sponsor" method="post" enctype="multipart/form-data">
+        <h1>Edit profile</h1>
+
+        {% if image_encoding %}
+        <img src="data:image/jpeg;base64,{{ image_encoding }}" alt="profile_img" style="width: 6.5vw;height: 6.5vw;border-radius: 50%;">
+        <input type="file" accept="image/*" name="image" id="image" style="border: none;position: relative;left: 15%;margin-top: 0.75vw;
+        margin-bottom: 0.75vw;">
+        {% else %}
+        <img src="/static/images/profile_pic.png" alt="sponsor_profile_pic" style="width: 5vw;">
+        <input type="file" id="image" name="image" accept="image/*" style="border: none;position: relative;left: 15%;margin-top: 0.75vw;
+        margin-bottom: 0.75vw;">
+        {% endif %}
+
+        <label for="name">Sponsor name</label>
+        <input name="name" id="name" type="text" placeholder="{{ user.sponsor_name }}" maxlength="20" value="{{ user.sponsor_name }}"><br>
+
+        <label for="email">Sponsor email</label>
+        <input name="email" id="email" type="text" placeholder="{{ user.email }}" maxlength="30" value="{{ user.email }}"><br>
+        
+        <label for="username">Sponsor username</label>
+        <input name="username" id="username" type="text" placeholder="{{ user.username }}" maxlength="16" value="{{ user.username }}"><br>
+
+        <div style="margin-top: 0.5vw;margin-bottom: 0.5vw;"> 
+            <label for="industry">Sponsor industry</label>
+            <select name="industry" id="industry" disabled>
+                <option value="{{ user.industry }}">{{ user.industry }}</option>
+            </select>
+        </div>
+       
+        <button type="submit">Save changes</button><br>
+
+        <a id="return" style="color: red;text-decoration: underline;font-size: medium;font-weight: bold;font-family: cursive;position: relative;left: -25%;margin-top: 0.5vw;margin-bottom: 0.5vw;">Go back ?</a>
+    </form>
+</body>
+</html>
