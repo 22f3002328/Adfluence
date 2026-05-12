@@ -1,0 +1,143 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;height: 45.5vw;
+    position: absolute;
+    left: 35%;top: 2.25%;
+    padding-left: 0.25vw;padding-right: 0.25vw;
+    border: none;
+    border-radius: 3vw;
+    box-shadow: 1vw 1vw 1vw grey;
+    background-color: whitesmoke;
+}
+
+form > h1{
+    font-family: cursive;
+    font-size: 1.5vw;
+}
+
+form > label{
+    margin-top: 0.2vw;margin-bottom: 0.2vw;
+    font-family: cursive;
+    font-size: medium;
+    font-weight: bold;
+}
+
+form > input{
+    width: 20vw;height: 1.5vw;
+    margin-top: 0.25vw;margin-bottom: 0.25vw;
+    border:none;
+    border-bottom: 0.1vw solid black;
+    padding-bottom: 0.25vw;
+    text-align: center;
+    font-family: cursive;
+    outline-style: none;
+    background-color: whitesmoke;
+}
+
+#name{
+    background-image: url('/static/images/name.png');
+    background-repeat: no-repeat;
+    background-size: 1.5vw;
+    background-position: left;
+}
+
+#email{
+    background-image: url('/static/images/email.png');
+    background-repeat: no-repeat;
+    background-size: 1.25vw;
+    background-position: left;
+}
+
+#username{
+    background-image: url('/static/images/username.png');
+    background-repeat: no-repeat;
+    background-size: 1.5vw;
+    background-position: left;
+}
+
+div > label{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: medium;
+}
+
+#niche{
+    background-image: url('/static/images/industry.png');
+    background-repeat: no-repeat;
+    background-size: 1vw;
+    background-position: left;
+    font-family: cursive;
+    font-size: small;
+    width: 10.5vw;height: 1.5vw;
+    margin-left: 1vw;margin-right: 1vw;
+    text-align: center;
+    border: none;padding-bottom: 0.25vw;
+    border-bottom: 0.1vw solid black;
+    background-color: whitesmoke;
+    outline-style: none;
+}
+
+
+#follower_count{
+    background-image: url('/static/images/follower_count.png');
+    background-repeat: no-repeat;
+    background-size: 1vw;
+    background-position: left;
+    font-family: cursive;
+    font-size: small;
+    width: 10.5vw;height: 1.5vw;
+    margin-left: 1vw;margin-right: 1vw;
+    text-align: center;
+    border: none;padding-bottom: 0.25vw;
+    border-bottom: 0.1vw solid black;
+    background-color: whitesmoke;
+    outline-style: none;
+}
+
+form > button{
+    width: 20vw;height: 2.5vw;
+    margin-top: 0.5vw;margin-bottom: 0.5vw;
+    border-radius: 2vw;border: none;
+    background-color: rgb(145, 145, 250);
+    color: white;
+    font-family: cursive;
+    font-size: medium;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+form > button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#niche:hover{
+    cursor: no-drop;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+#logout{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/logout.png');
+    background-position: center;
+    background-size: 1.5vw;
+    background-repeat: no-repeat;
+    border: 0vw;border-radius: 50%;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    background-color: whitesmoke;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    position: absolute;
+    top: 2.25%; right: 1%;
+}
+
+.btn:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}

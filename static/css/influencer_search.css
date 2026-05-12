@@ -1,0 +1,142 @@
+#campaign_id{
+    background-color: bisque;
+    font-family: cursive;
+    font-size: 0.75vw;
+    color: ghostwhite;
+    text-shadow: 0.2vw 0.2vw 0.5vw grey;
+    position: absolute;
+    top: 0.5%;left: 0.5%;
+    border-radius: 1vw;
+}
+
+
+#user_input{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vw;margin-bottom: 1vw;
+    position: absolute;
+    top: 3%;left: 13.5%;
+}
+
+
+#div_1 > select,#div_2 > select{
+    width: 16vw;height: 2.5vw;
+    margin-left: 0.5vw;margin-right: 0.5vw;
+    text-align: center;
+    font-family: cursive;
+    font-size: 0.85vw;
+    outline-style: none;
+    background-color: whitesmoke;
+    border: 0vw;
+    box-shadow: 0.5vw 0.5vw 0.5vw grey;
+    padding-left: 1vw;padding-right: 1vw;
+    border-radius: 1vw;
+}
+
+#div_1 > label,#div_2 > label{
+    font-family: cursive;
+    font-size: medium;
+    margin-left: 0.5vw;margin-right: 0.5vw;
+    color: red;
+}
+
+#submit{
+    width: 4.5vw;height: 2.5vw;
+    border-radius: 2vw;border: none;
+    background-image: url('/static/images/search.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.5vw;
+    background-color: rgb(145, 145, 250);
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+#submit:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 60vw;
+    position: absolute;
+    top: 31%;left: 16.5%;
+}
+
+#header > span{
+    font-family: cursive;
+    font-size: medium;
+    color: red;
+    width: 9vw;
+    text-align: center;
+}
+
+#influencer_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 33%;left: 15%;
+}
+
+.influencer_details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70vw;
+    padding-top: 1vw;padding-bottom: 1vw;
+    margin-top: 1vw;margin-bottom: 1vw;
+    border: 0vw;border-radius: 3vw;
+    box-shadow: 1vw 1vw 1vw grey;
+    background-color: whitesmoke;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+.influencer_details > span{
+    font-family: cursive;
+    font-size: small;
+    text-align: center;
+    width: 10vw; 
+}
+
+.btns{
+    border: none;border-radius: 50%;
+    background-color: whitesmoke;
+}
+
+.btns:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#redirect{
+    width: 2vw;height: 2vw;
+    background-image: url('/static/images/redirect.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.25vw;
+}
+
+#return{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/return.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.5vw;
+    background-color: whitesmoke;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    border: 0vw;border-radius: 50%;
+    position: absolute;
+    top: 3.25%;left: 1.5%;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}

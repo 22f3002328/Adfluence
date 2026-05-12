@@ -1,0 +1,93 @@
+.btns{
+    background-color: whitesmoke;
+}
+
+.btns:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#return{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/return.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.5vw;
+    border: 0vw;border-radius: 50%;
+    background-color: whitesmoke;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    position: absolute;
+    top: 3%;left: 1%;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+#header_request{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 81.5vw;
+    position: absolute;
+    top: 19%;left: 4%;
+}
+
+#header_request > span{
+    font-family: cursive;
+    font-size: 0.9vw;
+    color: red;
+    width: 5vw;
+    text-align: center;
+}
+
+#request_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 23.5%;left: 4%;
+}
+
+.negotiation_details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    padding-top: 1.5vw;padding-bottom: 1.5vw;
+    padding-left: 0.5vw;padding-right: 0.5vw;
+    margin-top: 1vw;margin-bottom: 1vw;
+    border: 0vw;border-radius: 3vw;
+    background-color: whitesmoke;
+    box-shadow: 1vw 1vw 1vw grey;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+.negotiation_details > span{
+    font-family: cursive;
+    font-size: small;
+    text-align: center;
+    width: 8vw;
+}
+
+#accept{
+    width: 2vw;height: 2vw;
+    margin-left: 0.25vw;margin-right: 0.25vw;
+    background-image: url('/static/images/accept.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.75vw;
+    border: none;border-radius: 50%;
+}
+
+#reject{
+    width: 2vw;height: 2vw;
+    margin-left: 0.25vw;margin-right: 0.25vw;
+    background-image: url('/static/images/reject.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.75vw;
+    border: none;border-radius: 50%;
+}

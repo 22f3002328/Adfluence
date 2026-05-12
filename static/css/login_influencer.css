@@ -1,0 +1,73 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;height: 30vw;
+    position: absolute;
+    left: 35%;top: 20%;
+    padding-left: 0.25vw;padding-right: 0.25vw;
+    border: none;
+    border-radius: 3vw;
+    box-shadow: 1vw 1vw 1vw grey;
+    background-color: whitesmoke;
+}
+
+form > h1{
+    font-family: cursive;
+    font-size: 1.5vw;
+}
+
+form > label{
+    margin-top: 0.2vw;margin-bottom: 0.2vw;
+    font-family: cursive;
+    font-size: medium;
+    font-weight: bold;
+}
+
+form > input{
+    width: 20vw;height: 1.5vw;
+    margin-top: 0.25vw;margin-bottom: 0.25vw;
+    border:none;
+    border-bottom: 0.1vw solid black;
+    padding-bottom: 0.25vw;
+    text-align: center;
+    font-family: cursive;
+    outline-style: none;
+    background-color: whitesmoke;
+}
+
+#username{
+    background-image: url('/static/images/username.png');
+    background-repeat: no-repeat;
+    background-size: 1.5vw;
+    background-position: left;
+}
+
+#password{
+    background-image: url('/static/images/password.png');
+    background-repeat: no-repeat;
+    background-size: 1.25vw;
+    background-position: calc();
+}
+
+form > button{
+    width: 20vw;height: 2.5vw;
+    margin-top: 0.5vw;margin-bottom: 0.5vw;
+    border-radius: 2vw;border: none;
+    background-color: rgb(145, 145, 250);
+    color: white;
+    font-family: cursive;
+    font-size: medium;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+form > button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+a:hover{
+    cursor: pointer;
+}

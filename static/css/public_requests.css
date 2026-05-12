@@ -1,0 +1,151 @@
+#header_campaign{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+    position: absolute;
+    top: 3%;left: 11%;
+}
+
+#header_campaign > span{
+    font-family: cursive;
+    font-size: medium;
+    color: red;
+    width: 9vw;
+    text-align: center;
+}
+
+#campaign_details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+    padding-top: 1vw;padding-bottom: 1vw;
+    margin-top: 1vw;margin-bottom: 1vw;
+    border: 0vw;border-radius: 3vw;
+    box-shadow: 1vw 1vw 1vw grey;
+    background-color: whitesmoke;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    position: absolute;
+    top: 6%;left: 11%;
+}
+
+#campaign_details > span{
+    font-family: cursive;
+    font-size: small;
+    text-align: center;
+    width: 10vw; 
+}
+
+#return{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/return.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.5vw;
+    background-color: whitesmoke;
+    border: 0vw;border-radius: 50%;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    position: absolute;
+    top: 8%;left: 3%;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+#return:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.btns{
+    background-color: whitesmoke;
+}
+
+.btns:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#header_request{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 74.5vw;
+    position: absolute;
+    top: 41%;left: 8.5%;
+}
+
+#header_request > span{
+    font-family: cursive;
+    font-size: medium;
+    color: red;
+    width: 9vw;
+    text-align: center;
+}
+
+#request_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 44%;left: 7.5%;
+}
+
+.request_details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 84vw;
+    padding-top: 1vw;padding-bottom: 1vw;
+    padding-left: 1vw;padding-right: 1vw;
+    margin-top: 1vw;margin-bottom: 1vw;
+    border: 0vw;border-radius: 3vw;
+    box-shadow: 1vw 1vw 1vw grey;
+    background-color: whitesmoke;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+.request_details > span{
+    font-family: cursive;
+    font-size: small;
+    text-align: center;
+    width: 10vw; 
+}
+
+#accept{
+    width: 2vw;height: 2vw;
+    margin-left: 0.25vw;margin-right: 0.25vw;
+    background-image: url('/static/images/accept.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.75vw;
+    border: none;border-radius: 50%;
+}
+
+#reject{
+    width: 2vw;height: 2vw;
+    margin-left: 0.25vw;margin-right: 0.25vw;
+    background-image: url('/static/images/reject.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.75vw;
+    border: none;border-radius: 50%;
+}
+
+#negotiate{
+    width: 2vw;height: 2vw;
+    margin-left: 0.25vw;margin-right: 0.25vw;
+    background-image: url('/static/images/negotiate.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.75vw;
+    border: none;border-radius: 50%;
+}
+

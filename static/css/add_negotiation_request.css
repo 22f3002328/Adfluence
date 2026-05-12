@@ -1,0 +1,91 @@
+#user_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;height: 38vw;
+    position: absolute;
+    left: 35%;top: 7%;
+    padding: 1vw;
+    border: none;
+    border-radius: 3vw;
+    box-shadow: 1vw 1vw 1vw grey;
+    background-color: whitesmoke;
+}
+
+#campaign_id{
+    background-image: url('/static/images/campaign_id.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 1.5vw;
+}
+
+#request_id{
+    background-image: url('/static/images/request.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 1.5vw;
+}
+
+#sponsor_id{
+    background-image: url('/static/images/sponsor.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 1.25vw;
+}
+
+#desired_amount{
+    background-image: url('/static/images/symbol_rupee.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 1.25vw;
+}
+
+#user_input > h1{
+    font-family: cursive;
+    font-size: 1.5vw;
+}
+
+#user_input > label{
+    margin-top: 0.25vw;margin-bottom: 0.25vw;
+    font-family: cursive;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#user_input > input{
+    width: 23vw;height: 1.5vw;
+    margin-top: 0.25vw;margin-bottom: 0.25vw;
+    border:none;
+    border-bottom: 0.1vw solid black;
+    padding-bottom: 0.25vw;
+    text-align: center;
+    font-family: cursive;
+    outline-style: none;
+    background-color: whitesmoke;
+}
+
+#user_input > button{
+    width: 20vw;height: 2.5vw;
+    margin-top: 0.5vw;margin-bottom: 0.5vw;
+    border-radius: 2vw;border: none;
+    background-color: rgb(145, 145, 250);
+    color: white;
+    font-family: cursive;
+    font-size: medium;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#return:hover{
+    cursor: pointer;
+}
+
+.btns_disabled:hover{
+    cursor: no-drop;
+}

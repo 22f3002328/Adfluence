@@ -1,0 +1,152 @@
+h1{
+    font-family: cursive;
+    font-size: 2.5vw;
+    color: whitesmoke;
+    text-shadow: 0.5vw 0.5vw 1vw grey;
+    text-align: center;
+}
+
+h1 > span{
+    font-family: cursive;
+    font-size: 2.5vw;
+    -webkit-text-stroke: 0.5px  whitesmoke;
+    color: red;
+    text-shadow: 0.5vw 0.5vw 1vw grey;
+}
+
+#profile{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/profile.png');
+    background-position: center;
+    background-size: 1.5vw;
+    background-repeat: no-repeat;
+    border: 0vw;border-radius: 50%;
+    margin-left: 1vw;margin-right: 1vw;
+    background-color: whitesmoke;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    position: absolute;
+    top: 2.25%; right: 1%;
+}
+
+
+#add_campaign{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/symbol_add.png');
+    background-position: center;
+    background-size: 1.5vw;
+    background-repeat: no-repeat;
+    border: 0vw;border-radius: 50%;
+    margin-left: 1vw;margin-right: 1vw;
+    background-color: whitesmoke;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    position: absolute;
+    top: 2.25%; right: 7%;
+}
+
+#negotiation_requests{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/negotiations_received.png');
+    background-position: center;
+    background-size: 2vw;
+    background-repeat: no-repeat;
+    border: 0vw;border-radius: 50%;
+    margin-left: 1vw;margin-right: 1vw;
+    background-color: whitesmoke;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    position: absolute;
+    top: 2.25%; right: 13%;
+}
+
+button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70vw;
+    position: absolute;
+    top: 35%;left: 9.5%;
+}
+
+#header > span{
+    font-family: cursive;
+    font-size: 0.85vw;
+    color: red;
+    width: 9vw;
+    text-align: center;
+}
+
+#campaign_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 37%;left: 9%;
+}
+
+.campaign_details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+    padding-top: 1vw;padding-bottom: 1vw;
+    padding-left: 1vw;padding-right: 1vw;
+    margin-top: 1vw;margin-bottom: 1vw;
+    border: 0vw;border-radius: 3vw;
+    box-shadow: 1vw 1vw 1vw grey;
+    background-color: whitesmoke;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+.campaign_details > span{
+    font-family: cursive;
+    font-size: small;
+    text-align: center;
+    width: 10vw; 
+}
+
+.btns{
+    width: 2vw;height: 2vw;
+    border: none;border-radius: 50%;
+    background-color: whitesmoke;
+}
+
+#redirect{
+    background-image: url('/static/images/redirect.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.25vw;
+}
+
+#edit{
+    background-image: url('/static/images/edit.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.25vw;
+}
+
+#delete{
+    background-image: url('/static/images/delete.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.25vw;
+}
+
+.btns:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+

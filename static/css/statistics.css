@@ -1,0 +1,111 @@
+#return{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/return.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.5vw;
+    background-color: whitesmoke;
+    border: 0vw;border-radius: 50%;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    position: absolute;
+    top: 2.5%;left: 1.5%;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+#return:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#inf_distr_niche{
+    position: absolute;
+    top: 90%;left: 7%;
+    width: 40vw !important ;
+    height: 30vw !important;
+    padding: 2vw;margin: 1vw;
+    border-radius: 2vw;
+    box-shadow: 1.5vw 1.5vw 1vw grey;
+    background-color: whitesmoke;
+}
+
+#spn_distr_industry{
+    position: absolute;
+    top: 15%;left: 7%;
+    width: 40vw !important;
+    height: 30vw !important;
+    padding: 2vw;margin: 1vw;
+    border-radius: 2vw;
+    box-shadow: 1.5vw 1.5vw 1vw grey;
+    background-color: whitesmoke;
+}
+
+#flagged_spns_distr{
+    position: absolute;
+    top: 15%;left: 54%;
+    width: 35vw !important;
+    height: 30vw !important;
+    padding: 2vw;margin: 1vw;
+    border-radius: 2vw;
+    box-shadow: 1.5vw 1.5vw 1vw grey;
+    background-color: whitesmoke;
+    color: #ffffff;
+}
+
+#flagged_infs_distr{
+    position: absolute;
+    top: 90%;left: 54%;
+    width: 35vw !important;
+    height: 30vw !important;
+    padding: 2vw;margin: 1vw;
+    border-radius: 2vw;
+    box-shadow: 1.5vw 1.5vw 1vw grey;
+    background-color: whitesmoke;
+    color: #ffffff;
+}
+
+#req_distr_field{
+    position: absolute;
+    top: 165%;left: 7%;
+    width: 40vw !important ;
+    height: 30vw !important;
+    padding: 2vw;margin: 1vw;
+    border-radius: 2vw;
+    box-shadow: 1.5vw 1.5vw 1vw grey;
+    background-color: whitesmoke;
+}
+
+#flagged_reqs_distr{
+    position: absolute;
+    top: 165%;left: 54%;
+    width: 35vw !important;
+    height: 30vw !important;
+    padding: 2vw;margin: 1vw;
+    border-radius: 2vw;
+    box-shadow: 1.5vw 1.5vw 1vw grey;
+    background-color: whitesmoke;
+    color: #ffffff;
+}
+
+#camp_distr_field{
+    position: absolute;
+    top: 240%;left: 7%;
+    width: 40vw !important ;
+    height: 30vw !important;
+    padding: 2vw;margin: 1vw;
+    border-radius: 2vw;
+    box-shadow: 1.5vw 1.5vw 1vw grey;
+    background-color: whitesmoke;
+}
+
+#flagged_camps_distr{
+    position: absolute;
+    top: 240%;left: 54%;
+    width: 35vw !important;
+    height: 30vw !important;
+    padding: 2vw;margin: 1vw;
+    border-radius: 2vw;
+    box-shadow: 1.5vw 1.5vw 1vw grey;
+    background-color: whitesmoke;
+    color: #ffffff;
+}

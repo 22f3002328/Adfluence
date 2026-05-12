@@ -1,0 +1,193 @@
+h1{
+    font-family: cursive;
+    font-size: 2.5vw;
+    color: white;
+    text-shadow: 0.5vw 0.5vw 1vw grey;
+    text-align: center;
+}
+
+h1 > span{
+    font-family: cursive;
+    font-size: 2.5vw;
+    -webkit-text-stroke: 0.5px  whitesmoke;
+    color: red;
+    text-shadow: 0.5vw 0.5vw 1vw grey;
+}
+
+#negotiations_sent{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/negotiations_sent.png');
+    background-position: center;
+    background-size: 2vw;
+    background-repeat: no-repeat;
+    border: 0vw;border-radius: 50%;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    margin-left: 1vw;margin-right: 1vw;
+    background-color: whitesmoke;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    position: absolute;
+    top: 2.25%; right: 19%;
+}
+
+#accepted_requests{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/accepted_requests.png');
+    background-position: center;
+    background-size: 1.5vw;
+    background-repeat: no-repeat;
+    border: 0vw;border-radius: 50%;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    margin-left: 1vw;margin-right: 1vw;
+    background-color: whitesmoke;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    position: absolute;
+    top: 2.25%; right: 13%;
+}
+
+#pvt_requests{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/pvt_requests.png');
+    background-position: center;
+    background-size: 1.5vw;
+    background-repeat: no-repeat;
+    border: 0vw;border-radius: 50%;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    margin-left: 1vw;margin-right: 1vw;
+    background-color: whitesmoke;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    position: absolute;
+    top: 2.25%; right: 7%;
+}
+
+#profile{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/profile.png');
+    background-position: center;
+    background-size: 1.5vw;
+    background-repeat: no-repeat;
+    border: 0vw;border-radius: 50%;
+    box-shadow: 0.25vw 0.25vw 0.25vw grey;
+    margin-left: 1vw;margin-right: 1vw;
+    background-color: whitesmoke;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    position: absolute;
+    top: 2.25%; right: 1%;
+}
+
+button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 25%;left: 31%;
+}
+
+#div_1 > select{
+    width: 15vw;height: 2.5vw;
+    margin-left: 0.5vw;margin-right: 0.5vw;
+    text-align: center;
+    font-family: cursive;
+    font-size: 0.85vw;
+    outline-style: none;
+    background-color: whitesmoke;
+    border: 0vw;
+    box-shadow: 0.5vw 0.5vw 0.5vw grey;
+    padding-left: 1vw;padding-right: 1vw;
+    border-radius: 1vw;
+}
+
+#div_1 > label{
+    font-family: cursive;
+    font-size: medium;
+    margin-left: 0.5vw;margin-right: 0.5vw;
+    color: red;
+}
+
+#submit{
+    width: 4.5vw;height: 2.5vw;
+    border-radius: 2vw;border: none;
+    background-image: url('/static/images/search.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.5vw;
+    background-color: rgb(145, 145, 250);
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+#submit:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#header_campaigns{
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 52%;left: 10%;
+}
+
+#header_campaigns > span{
+    font-family: cursive;
+    font-size: medium;
+    color: red;
+    width: 9vw;
+    text-align: center;max-width: 10vw;
+}
+
+#campaign_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 55%;left: 11%;
+}
+
+.campaign_details{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1vw;margin-bottom: 1vw;
+    border: 0vw;border-radius: 3vw;
+    box-shadow: 1vw 1vw 1vw grey;
+    background-color: whitesmoke;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+
+.campaign_details > span{
+    width: 10vw;
+    margin-left: 0.55vw;margin-right: 0.55vw;
+    font-family: cursive;
+    font-size: 0.85vw;
+    text-align: center;
+}
+
+#redirect{
+    width: 4vw;height: 4vw;
+    background-image: url('/static/images/redirect.png');
+    background-position: center;
+    background-size: 1.5vw;
+    background-repeat: no-repeat;
+    border: none;border-radius: 50%;
+    margin-left: 1vw;margin-right: 1vw;
+    background-color: whitesmoke;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}

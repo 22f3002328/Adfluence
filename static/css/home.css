@@ -1,0 +1,38 @@
+#header{
+    text-align: center;
+    font-family: cursive;
+    font-size: xx-large;
+    position: absolute;
+    top: 7%;left: 33%;
+    color: white;
+    text-shadow: 0.5vw 0.5vw 1.25vw grey;
+}
+
+#nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 85vw;
+    position: absolute;
+    top: 28%;left: 7.5%;
+}
+
+#nav > div{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   width: 15vw;height: 15vw;
+   padding: 2vw;
+   border-radius: 50%;
+   background-color: white;
+   box-shadow: 1vw 1vw 1vw grey;
+   transition-property: opacity;
+   transition-duration: 0.15s;
+}
+
+#nav > div:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
